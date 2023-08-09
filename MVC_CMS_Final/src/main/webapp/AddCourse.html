@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="app.css">
+	<meta charset="ISO-8859-1">
+	<title>Course register</title>
+</head>
+
+<body>
+	<div class="topnav">
+		<img src="Logo.png" id="logo">
+		<h1><a class="Link" href="ProfessorLogin.html">Professor</a></h1>
+		<h1><a class="Link" href="StudentLogin.html">Student</a></h1>
+		<h1><a class="active" href="AdminLogin.html">Admin</a></h1>
+		<a class="Link" href="index.html">Home</a>
+	</div>
+	<h1 class="header">Register Course</h1>
+	<div class="formContainer">
+		<form action="AddCourse" id="form" method="post">
+			<div class="list">
+				<table>
+					<tr>
+						<td>
+							<label class="label" for="Course_id">Course Id</label>
+						</td>
+						<td>
+							<input class="input" type="number" name="Course_id" placeholder=""><br> <br>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="label" for="Course_name">Course Name</label>
+						</td>
+						<td>
+							<input class="input" type="text" name="Course_name" placeholder=""><br> <br>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="label" for="Course_fees">Course Fees</label>
+						</td>
+						<td>
+							<input class="input" type="text" name="Course_fees" placeholder=""><br> <br>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="label" for="Course_duration">Course Duration</label>
+						</td>
+						<td>
+							<input class="input" type="text" name="Course_duration" placeholder=""><br> <br>
+						</td>
+					</tr>
+				</table>
+				<div class="buttonHolder">
+					<input class="input" id="LoginButton" type="submit" value="Add Course">
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+
+</html>
