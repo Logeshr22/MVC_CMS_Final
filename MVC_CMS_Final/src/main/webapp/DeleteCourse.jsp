@@ -6,7 +6,6 @@
 <html>
 <head>
 <link rel="stylesheet" href="app.css">
-<meta charset="ISO-8859-1">
 <title>Delete Course</title>
 </head>
 <body>
