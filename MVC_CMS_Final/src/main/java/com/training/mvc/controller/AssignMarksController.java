@@ -35,10 +35,8 @@ public class AssignMarksController extends HttpServlet{
 			session.setAttribute("mark",s.getMark());
 			session.setAttribute("sid",s.getSid());
 			
-			
 			resp.sendRedirect("/MVC_CMS_Final/MarkAssignSuccess.html");
 			
-
 		}
 		else {
 			resp.sendRedirect("/MVC_CMS_Final/MarksAssignFailed.html");
