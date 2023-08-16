@@ -5,107 +5,96 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="app.css">
 <meta charset="ISO-8859-1">
 <title>View Professor details</title>
 </head>
 <body>
-		
-<%
+	<div class="topnav">
+		<a id="Link" href="ProfessorLogin.html">Professor</a> <a id="Link"
+			href="StudentLogin.html">Student</a> <a id="activeLink"
+			href="AdminLogin.html">Admin</a> <a id="Link" href="index.html">Home</a>
+	</div>
+	<%
+	Statement stmt = null;
 
-    Statement stmt = null;
+	Connection con = null;
 
-    Connection con = null;
+	ResultSet resultSet = null;
 
-    ResultSet resultSet = null;
+	try {
 
-   
+		Class.forName("com.mysql.cj.jdbc.Driver");
 
-    
+		String url = "jdbc:mysql://localhost:3306/crs";
 
-    try {
+		String user = "root";
 
-        Class.forName("com.mysql.cj.jdbc.Driver");
+		String pwd = "Logesh88823";
 
-        String url = "jdbc:mysql://localhost:3306/crs";
+		con = DriverManager.getConnection(url, user, pwd);
 
-        String user = "root";
+		String sql = "select * from student";
 
-        String pwd = "Shivani@1235";
-
-        con = DriverManager.getConnection(url, user, pwd);
-
-        String sql = "select * from student";
-
-        stmt = con.createStatement();
+		stmt = con.createStatement();
 		resultSet = stmt.executeQuery(sql);
+	%>
+	<div class="formContainer">
+		<h1 class="specialHeader">
+			Remove Student <span class="highlight">.</span>
+		</h1>
+		<div class="list">
+			<table class="displayTable">
+				<tr>
+					<th class="displayTableData">Student ID</th>
+					<th class="displayTableData">Student Name</th>
+					<th class="displayTableData">Email</th>
+					<th class="displayTableData">User Name</th>
+					<th class="displayTableData">Course ID</th>
+					<th class="displayTableData">Marks</th>
 
-    %>
+				</tr>
 
-<table border="1">
+				<%
+				while (resultSet.next()) {
+				%>
 
-<tr>
+				<tr>
+					<td class="displayTableData"><%=resultSet.getInt("sid")%></td>
+					<td class="displayTableData"><%=resultSet.getString("sname")%></td>
+					<td class="displayTableData"><%=resultSet.getString("email")%></td>
+					<td class="displayTableData"><%=resultSet.getString("user_name")%></td>
+					<td class="displayTableData"><%=resultSet.getInt("cid")%></td>
+					<td class="displayTableData"><%=resultSet.getInt("mark")%></td>
+				</tr>
 
-<th>Student ID</th>
+				<%
+				}
 
-<th>Student Name</th>
+				} catch (Exception e) {
 
-<th>email</th>
+				out.println(e);
 
-<th>User_name</th>
-
-<th>Course ID</th>
-<th>Marks</th>
-
-
-
-
-
-</tr>
-
-<%
-
-        while (resultSet.next()) {
-
-        %>
-
-<tr>
-
-<td><%=resultSet.getInt("sid")%></td>
-
-<td><%=resultSet.getString("sname")%></td>
-<td><%=resultSet.getString("email")%></td>
-<td><%=resultSet.getString("user_name")%></td>
-<td><%=resultSet.getInt("cid")%></td>
-<td><%=resultSet.getInt("mark")%></td>
-
-
-</tr>
-
-<%
-
-        }
-
-        } catch (Exception e) {
-
-        out.println(e);
-
-        }  
-
-        %>
-        
-        
-        
-	<br>
-	
-	
-</table>
-
-	<form action="DeleteStudent" method="post">
-		<label>Student Id to Be Deleted</label>
-		<input type="text" name="stud_id" placeholder=""><br> <br>
-
-		<input type="submit" value="Delete">
-	</form>
+				}
+				%>
+			</table>
+			<div class="space"></div>
+			<form action="DeleteStudent" method="post">
+				<table class="center">
+					<tr>
+						<td><label class="label">Student ID</label></td>
+						<td><input class="input" type="number" name="stud_id"
+							placeholder=""></td>
+					</tr>
+				</table>
+				<div class="space"></div>
+				<div class="buttonHolder">
+					<input id="LoginButton" type="submit" value="Remove"> <a
+						id="LoginButton" href="AdminServices.html">Back</a>
+				</div>
+			</form>
+		</div>
+	</div>
 </body>
 
 </html>

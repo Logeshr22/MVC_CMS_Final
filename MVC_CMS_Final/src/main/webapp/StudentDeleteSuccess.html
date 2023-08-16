@@ -8,19 +8,32 @@
 </head>
 
 <body>
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="app.css">
+	<meta charset="ISO-8859-1">
+	<title>Failed</title>
+</head>
+
+<body>
 	<div class="topnav">
-		<img src="Logo.png" id="logo">
-		<h1>
-			<a class="Link" href="ProfessorLogin.html">Professor</a>
-		</h1>
-		<h1>
-			<a class="Link" href="StudentLogin.html">Student</a>
-		</h1>
-		<h1>
-			<a class="active" href="AdminLogin.html">Admin</a>
-		</h1>
-		<a class="Link" href="index.html">Home</a>
+		<a id="Link" href="ProfessorLogin.html">Professor</a> <a
+			id="Link" href="StudentLogin.html">Student</a> <a id="activeLink"
+			href="AdminLogin.html">Admin</a> <a id="Link" href="index.html">Home</a>
 	</div>
+	<div id="messageContainer" class="formContainer">
+		<div class="list">
+			<h2 class="message">Password not changed</h2>
+		</div>
+		<div class="buttonHolder">
+			<a class="LinkButton" href="SChangePassword.html">Try Again</a>
+		</div>
+	</div>
+</body>
+
+</html>
 	<div id="messageContainer" class="formContainer">
 		<div class="list">
 			<h2 class="message">Removed Successfully</h2>

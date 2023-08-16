@@ -10,19 +10,10 @@
 </head>
 <body>
 	<div class="topnav">
-		<img src="Logo.png" id="logo">
-		<h1>
-			<a class="Link" href="ProfessorLogin.html">Professor</a>
-		</h1>
-		<h1>
-			<a class="Link" href="StudentLogin.html">Student</a>
-		</h1>
-		<h1>
-			<a class="active" href="AdminLogin.html">Admin</a>
-		</h1>
-		<a class="Link" href="index.html">Home</a>
+		<a id="Link" href="ProfessorLogin.html">Professor</a> <a id="Link"
+			href="StudentLogin.html">Student</a> <a id="activeLink"
+			href="AdminLogin.html">Admin</a> <a id="Link" href="index.html">Home</a>
 	</div>
-	<h1 class="header">Delete Course</h1>
 	<%
 	Statement stmt = null;
 	Connection con = null;
@@ -44,6 +35,9 @@
 		resultSet = stmt.executeQuery(sql);
 	%>
 	<div class="formContainer">
+		<h1 class="specialHeader">
+			Delete Course <span class="highlight">.</span>
+		</h1>
 		<div class="list">
 			<table class="displayTable">
 				<tr>
@@ -69,6 +63,7 @@
 				}
 				%>
 			</table>
+			<div class="space"></div>
 			<form action="DeleteCourse" method="post">
 				<table class="center">
 					<tr>
@@ -77,12 +72,12 @@
 							placeholder=""></td>
 					</tr>
 				</table>
+				<div class="space"></div>
+				<div class="buttonHolder">
+					<input id="LoginButton" type="submit" value="Delete"> <a
+						id="LoginButton" href="AdminServices.html">Back</a>
+				</div>
 			</form>
-			<div class="buttonHolder">
-				<input id="LoginButton" type="submit" value="Delete"> <a
-					id="LoginButton" href="AdminServices.html">Back</a>
-			</div>
-
 		</div>
 	</div>
 </body>

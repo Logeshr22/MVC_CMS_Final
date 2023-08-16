@@ -12,19 +12,10 @@
 <body>
 
 	<div class="topnav">
-		<img src="Logo.png" id="logo">
-		<h1>
-			<a class="Link" href="ProfessorLogin.html">Professor</a>
-		</h1>
-		<h1>
-			<a class="Link" href="StudentLogin.html">Student</a>
-		</h1>
-		<h1>
-			<a class="active" href="AdminLogin.html">Admin</a>
-		</h1>
-		<a class="Link" href="index.html">Home</a>
+		<a id="Link" href="ProfessorLogin.html">Professor</a> <a id="Link"
+			href="StudentLogin.html">Student</a> <a id="activeLink"
+			href="AdminLogin.html">Admin</a> <a id="Link" href="index.html">Home</a>
 	</div>
-	<h1 class="header">Add Student</h1>
 	<%
 	Statement stmt = null;
 	Connection con = null;
@@ -40,6 +31,9 @@
 		resultSet = stmt.executeQuery(sql);
 	%>
 	<div class="formContainer">
+		<h1 class="specialHeader">
+			Add Student <span class="highlight">.</span>
+		</h1>
 		<div class="list">
 			<table class="displayTable">
 				<tr>
@@ -70,34 +64,40 @@
 					<table>
 						<tr>
 							<td><label class="label">Student ID</label></td>
-							<td><input class="input" type="number" name="Student_id" placeholder=""></td>
-						</tr>
-						<tr>
-							<td><label class="label">Student Name</label></td>
-							<td><input class="input" type="text" name="Student_name" placeholder=""></td>
-						</tr>
-						<tr>
-							<td><label class="label">User Name</label></td>
-							<td><input class="input" type="text" name="User_Name" placeholder="">
-							</td>
-						</tr>
-						<tr>
-							<td><label class="label">Email</label></td>
-							<td><input class="input" type="text" name="Email" placeholder=""></td>
-						</tr>
-						<tr>
-							<td><label class="label">Password</label></td>
-							<td><input class="input" type="password" name="student_password"
+							<td><input class="input" type="number" name="Student_id"
 								placeholder=""></td>
 						</tr>
 						<tr>
+							<td><label class="label">Student Name</label></td>
+							<td><input class="input" type="text" name="Student_name"
+								placeholder=""></td>
+						</tr>
+						<tr>
+							<td><label class="label">User Name</label></td>
+							<td><input class="input" type="text" name="User_Name"
+								placeholder=""></td>
+						</tr>
+						<tr>
+							<td><label class="label">Email</label></td>
+							<td><input class="input" type="text" name="Email"
+								placeholder=""></td>
+						</tr>
+						<tr>
+							<td><label class="label">Password</label></td>
+							<td><input class="input" type="password"
+								name="student_password" placeholder=""></td>
+						</tr>
+						<tr>
 							<td><label class="label">Course ID</label></td>
-							<td><input class="input"	 type="number" name="Course_id" placeholder=""></td>
+							<td><input class="input" type="number" name="Course_id"
+								placeholder=""></td>
 						</tr>
 					</table>
+					<div class="space"></div>
 					<div class="buttonHolder">
 						<input id="LoginButton" class="input" type="submit"
-							value="Add Student">
+							value="Add Student"> <a id="LoginButton"
+							href="AdminServices.html">Back</a>
 					</div>
 				</form>
 			</div>
