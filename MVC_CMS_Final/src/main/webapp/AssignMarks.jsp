@@ -19,27 +19,20 @@
 	<%
 
     Statement stmt = null;
-
     Connection con = null;
-
+	PreparedStatement pstmt = null;
     ResultSet resultSet = null;
-
 	int cid = (int) session.getAttribute("cid");
 	try {
         Class.forName("com.mysql.cj.jdbc.Driver");
-
         String url = "jdbc:mysql://localhost:3306/crs";
-
         String user = "root";
-
         String pwd = "Logesh88823";
-
         con = DriverManager.getConnection(url, user, pwd);
-
-        String sql = "select * from student";
-
-        stmt = con.createStatement();
-		resultSet = stmt.executeQuery(sql);
+        String sql = "select * from student where cid = ?";
+		pstmt = con.prepareStatement(sql);
+		pstmt.setInt(1,cid);
+		resultSet = pstmt.executeQuery();
 	%>
 	<div class="formContainer">
 		<h1 class="specialHeader">Assign Marks <span class="highlight">.</span></h1>
