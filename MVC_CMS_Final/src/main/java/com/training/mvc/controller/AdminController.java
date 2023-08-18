@@ -29,19 +29,6 @@ public class AdminController extends HttpServlet {
 
 			session.setAttribute("user_name", u.getUser_name());
 			session.setAttribute("password", u.getPassword());
-			session.setAttribute("pname",p.getPname());
-			session.setAttribute("pid", p.getPid());
-			session.setAttribute("ppassword",p.getPpassword());
-			session.setAttribute("exp",p.getExp());
-			session.setAttribute("cid",p.getCid());
-			session.setAttribute("suser",s.getUser_name());
-			session.setAttribute("spass",s.getSpassword());
-			session.setAttribute("sname",s.getSname());
-			session.setAttribute("email",s.getEmail());
-			session.setAttribute("cid",s.getCid());
-			session.setAttribute("mark",s.getMark());
-			session.setAttribute("grade",s.getGrade());			
-			session.setAttribute("sid",s.getSid());
 
 			resp.sendRedirect("/MVC_CMS_Final/AdminServices.html");
 		} else {

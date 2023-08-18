@@ -161,24 +161,13 @@ public class Professor {
 			int x = pstmt.executeUpdate();
 
 			if (x > 0) {
-				String sql1 = "insert into users values(?,?)";
-				pstmt = con.prepareStatement(sql1);
-				pstmt.setString(1, pname);
-				pstmt.setString(2, ppassword);
-
-				x = pstmt.executeUpdate();
-				if (x > 0) {
-
 					return true;
-
 				} else {
 
 					// resp.sendRedirect("/BankingApplication/LoginFail.html");
 					System.out.println("error beacuse login failed after resset");
 					return false;
 				}
-
-			}
 
 		} catch (Exception e) {
 

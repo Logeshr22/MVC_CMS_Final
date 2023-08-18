@@ -7,7 +7,7 @@
 <head>
 <link rel="stylesheet" href="app.css">
 <meta charset="ISO-8859-1">
-<title>View Students details</title>
+<title>View Marks</title>
 </head>
 <body>
 	<div class="topnav">
